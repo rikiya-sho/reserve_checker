@@ -10,7 +10,7 @@ var Schedule = require('./models/schedule');
 
 //リレーション
 Schedule.sync().then(() => {
-
+  
 });
 
 var indexRouter = require('./routes/index');
