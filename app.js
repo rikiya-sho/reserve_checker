@@ -5,8 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
 
+//モデルの読み込み
+var Schedule = require('./models/schedule');
+
+//リレーション
+Schedule.sync().then(() => {
+
+});
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var scheduleRouter = require('./routes/schedules');
+//var usersRouter = require('./routes/users');
 
 var app = express();
 app.use(helmet());
@@ -22,7 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/schedules', scheduleRouter);
+//app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

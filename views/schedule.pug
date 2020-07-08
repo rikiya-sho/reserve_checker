@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form(method="post", action="/schedules")
+    div
+      h5 日時
+      input(type="date" name="date")
+    div
+      h5 9時の予定
+      <input type="radio" name="reserve_9_00" value="1" checked="checked">予約する
+      <input type="radio" name="reserve_9_00" value="0">予約キャンセル
+    button(type="submit") 予定をつくる
