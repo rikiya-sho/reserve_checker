@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  each schedule in schedules
+    table
+      tr
+        th #{schedule.date}
+      tr
+        td #{schedule.reserve_9_00}
+      tr
+        td #{schedule.reserve_9_30}
+      tr
+        td #{schedule.reserve_10_00}
+      tr
+        td #{schedule.reserve_10_30}
+      tr
+        td #{schedule.reserve_11_00}
+      tr
+        td #{schedule.reserve_11_30}
+      tr
+        td #{schedule.reserve_12_00}
+      tr
+        td #{schedule.reserve_16_00}
+      tr
+        td #{schedule.reserve_16_30}
+      tr
+        td #{schedule.reserve_17_00}
+      tr
+        td #{schedule.reserve_17_30}
+      tr
+        td #{schedule.reserve_18_00}
+      tr
+        td #{schedule.reserve_18_30}
+      tr
+        td #{schedule.reserve_19_00}
+      tr
+        td #{schedule.reserve_19_30}
+      tr
+        td #{schedule.reserve_20_00}

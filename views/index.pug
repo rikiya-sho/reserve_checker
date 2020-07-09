@@ -4,39 +4,94 @@ block content
   h1= title
   p Welcome to #{title}
 
-  each schedule in schedules
-    table
+  table
+    thead
       tr
-        th #{schedule.date}
+        td(rowspan="2")
+        td(id="month" colspan="7")
       tr
-        td #{schedule.reserve_9_00}
-      tr
-        td #{schedule.reserve_9_30}
-      tr
-        td #{schedule.reserve_10_00}
-      tr
-        td #{schedule.reserve_10_30}
-      tr
-        td #{schedule.reserve_11_00}
-      tr
-        td #{schedule.reserve_11_30}
-      tr
-        td #{schedule.reserve_12_00}
-      tr
-        td #{schedule.reserve_16_00}
-      tr
-        td #{schedule.reserve_16_30}
-      tr
-        td #{schedule.reserve_17_00}
-      tr
-        td #{schedule.reserve_17_30}
-      tr
-        td #{schedule.reserve_18_00}
-      tr
-        td #{schedule.reserve_18_30}
-      tr
-        td #{schedule.reserve_19_00}
-      tr
-        td #{schedule.reserve_19_30}
-      tr
-        td #{schedule.reserve_20_00}
+        td(id="today+0")
+        td(id="today+1")
+        td(id="today+2")
+        td(id="today+3")
+        td(id="today+4")
+        td(id="today+5")
+        td(id="today+6")
+    tbody
+      tr(id="schedule-container")
+        th
+          table
+            tr
+              th 9:30
+            tr
+              th 10:00
+            tr
+              th 10:30
+            tr
+              th 11:00
+            tr
+              th 11:30
+            tr
+              th 12:00
+            tr
+              th &nbsp;
+            tr
+              th 16:00
+            tr
+              th 16:30
+            tr
+              th 17:00
+            tr
+              th 17:30
+            tr
+              th 18:00
+            tr
+              th 18:30
+            tr
+              th 19:00
+            tr
+              th 19:30
+            tr
+              th 20:00
+        each schedule in schedules
+          th
+            table
+              tr
+                th #{schedule.date}
+              tr
+                td  #{schedule.reserve_9_00}
+              tr
+                td  #{schedule.reserve_9_30}
+              tr
+                td  #{schedule.reserve_10_00}
+              tr
+                td  #{schedule.reserve_10_30}
+              tr
+                td  #{schedule.reserve_11_00}
+              tr
+                td  #{schedule.reserve_11_30}
+              tr
+                td  #{schedule.reserve_12_00}
+              tr
+                td  &nbsp;
+              tr
+                td  #{schedule.reserve_16_00}
+              tr
+                td  #{schedule.reserve_16_30}
+              tr
+                td  #{schedule.reserve_17_00}
+              tr
+                td  #{schedule.reserve_17_30}
+              tr
+                td  #{schedule.reserve_18_00}
+              tr
+                td  #{schedule.reserve_18_30}
+              tr
+                td  #{schedule.reserve_19_00}
+              tr
+                td  #{schedule.reserve_19_30}
+              tr
+                td  #{schedule.reserve_20_00}
+  script(src='/javascripts/calendar.js')
+
+  

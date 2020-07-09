@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
   const title = 'Express';
   if (Schedule) {
     Schedule.findAll({
-      order: [['date', 'DESC']]
+      order: [['date', 'ASC']]
     }).then(schedules => {
       res.render('index', {
         schedules: schedules
