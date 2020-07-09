@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
 
   Schedule.upsert({
     date: req.body.date,
-    reserve_9_00: req.body.reserve_9_00/*,
+    reserve_9_00: req.body.reserve_9_00,
     reserve_9_30: req.body.reserve_9_30,
     reserve_10_00: req.body.reserve_10_00,
     reserve_10_30: req.body.reserve_10_30,
@@ -27,7 +27,7 @@ router.post('/', (req, res, next) => {
     reserve_18_30: req.body.reserve_18_30,
     reserve_19_00: req.body.reserve_19_00,
     reserve_19_30: req.body.reserve_19_30,
-    reserve_20_00: req.body.reserve_20_00*/
+    reserve_20_00: req.body.reserve_20_00
   });
   
 });
