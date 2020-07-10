@@ -15,6 +15,7 @@ Schedule.sync().then(() => {
 
 var indexRouter = require('./routes/index');
 var scheduleRouter = require('./routes/schedules');
+var initRouter = require('./routes/init');
 //var usersRouter = require('./routes/users');
 
 var app = express();
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/schedules', scheduleRouter);
+app.use('/init', initRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
