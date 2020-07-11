@@ -18,15 +18,16 @@ month.innerHTML = monthStr;
 var sundayPos; //日曜日の場所
 var saturdayPos; //土曜日の場所
 var wednesdayPos; //水曜日の場所
+var timeCellPos = 1; //時間帯のセルの分ずらす
 /*各数字は曜日配列番号に対応*/
-sundayPos = 7 - Number(day);
+sundayPos = 7 - Number(day) + timeCellPos;
 if(sundayPos === 7){
-  sundayPos = 0;
+  sundayPos = 0 + timeCellPos;
 }
-saturdayPos = 6 - Number(day);
-wednesdayPos = 3 - Number(day);
+saturdayPos = 6 - Number(day) + timeCellPos;
+wednesdayPos = 3 - Number(day) + timeCellPos;
 if(wednesdayPos < 0){
-  wednesdayPos = 7 + wednesdayPos;
+  wednesdayPos = 6 + wednesdayPos + timeCellPos;
 }
 const scheduleContainer = document.getElementById('schedule-container');
 const sundayCell = scheduleContainer.children[sundayPos];

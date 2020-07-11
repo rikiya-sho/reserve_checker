@@ -22,6 +22,8 @@ block content
         th
           table
             tr
+              th 9:00
+            tr
               th 9:30
             tr
               th 10:00
@@ -57,7 +59,7 @@ block content
           th
             table
               tr
-                th #{schedule.date}
+                th(class="scheduleDate") #{schedule.date}
               tr
                 td  #{schedule.reserve_9_00}
               tr

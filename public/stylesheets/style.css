@@ -3,8 +3,17 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+#schedule-container table th, #schedule-container table td{
+  border:none;
+  text-align: center;
+}
 th,td{
   border:1px solid #ccc;
+  text-align: center;
+}
+.scheduleDate{
+  display:none;
 }
 
 a {
