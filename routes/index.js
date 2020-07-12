@@ -9,8 +9,7 @@ router.get('/', function(req, res, next) {
 });*/
 
 router.get('/', (req, res, next) => {
-  console.log(dayOfWeekArray);
-  const title = 'Express';
+  //console.log(dayOfWeekArray);//1週間の年月日が取得できているかテスト
   if (Schedule) {
     Schedule.findAll({
       where: {
@@ -27,6 +26,7 @@ router.get('/', (req, res, next) => {
       order: [['date', 'ASC']]
     }).then(schedules => {
       res.render('index', {
+        title: '予約状況',
         schedules: schedules
       });
     });

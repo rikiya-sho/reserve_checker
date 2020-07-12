@@ -2,14 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
 
   table
     thead
       tr
         td(rowspan="2")
         td(id="month" colspan="7")
-      tr
+      tr(class="day7")
         td(id="today+0")
         td(id="today+1")
         td(id="today+2")
@@ -20,7 +19,7 @@ block content
     tbody
       tr(id="schedule-container")
         th
-          table
+          table(class="time")
             tr
               th 9:00
             tr
@@ -54,7 +53,7 @@ block content
             tr
               th 19:30
             tr
-              th 20:00
+              th(class="lastCell") 20:00
         each schedule in schedules
           th
             table
@@ -75,7 +74,7 @@ block content
               tr
                 td  #{schedule.reserve_12_00}
               tr
-                td  &nbsp;
+                td(class="emptyCell") &nbsp;
               tr
                 td  #{schedule.reserve_16_00}
               tr
@@ -95,5 +94,6 @@ block content
               tr
                 td  #{schedule.reserve_20_00}
   script(src='/javascripts/calendar.js')
+  script(src='/javascripts/table_view.js')
 
   

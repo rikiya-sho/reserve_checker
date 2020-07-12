@@ -1,20 +1,68 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "M PLUS 1p";
 }
 
-
-#schedule-container table th, #schedule-container table td{
-  border:none;
-  text-align: center;
+table{
+  border-spacing: 0;
+  vertical-align: bottom;
 }
 th,td{
   border:1px solid #ccc;
   text-align: center;
+  padding:0;
+  margin:0;
+  width:4.5em;
+}
+
+
+#schedule-container table{
+  display: inline-block;
 }
 .scheduleDate{
   display:none;
 }
+#schedule-container table th, #schedule-container table td{
+  border:none;
+  text-align: center;
+  height:35px;
+  border-bottom:1px solid #ccc;
+}
+#schedule-container table .lastCell{
+  border-bottom:0;
+}
+
+.time{
+  background-color: #F6F6F6
+}
+.reservable{
+  color:green;
+  font-size:115%;
+}
+.unreservable{
+  background-color: #EEE;
+}
+.reservable.close{
+  color:#000;
+  background-color: #EEE;
+}
+.emptyCell{
+  background-color: #F6F6F6
+}
+#schedule-container .sunday{
+  background-color: #EEE;
+}
+
+.day7 .saturday{
+  background-color: #D9E3EC;
+  color: #4466BB;
+}
+.day7 .sunday{
+  background-color: #EEDDD9;
+  color: #BB5555;
+}
+
 
 a {
   color: #00B7FF;
