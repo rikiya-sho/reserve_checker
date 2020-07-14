@@ -1,3 +1,8 @@
+/*
+7日後〜13日後まで（下のテーブル）の設定
+calendar.js, table_view.js を流用
+*/
+
 $(function(){
 
   const scheduleContainer = document.getElementById('schedule-container2');

@@ -1,3 +1,7 @@
+/*
+テーブルのView設定
+*/
+
 $(function(){
   //日曜日を休業日に設定-----------------------------
   $('#schedule-container .sunday table').replaceWith('休<br>業<br>日');
@@ -32,9 +36,4 @@ $(function(){
   }
   $('#schedule-container .close').text('－');
 
-  
-  
-  
-  
-  
 });

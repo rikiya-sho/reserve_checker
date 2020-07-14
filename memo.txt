@@ -1,4 +1,19 @@
 メモ
 
-データベース名
+■データベース名
 reserve_checker
+
+■Express4 BASIC認証
+
+1.basic-auth-connectをインストール
+npm install basic-auth-connect
+
+2.足りないモジュールがあったので（依存モジュールインストール）
+npm install
+
+3.app.jsに追加
+var basicAuth = require('basic-auth-connect');
+app.use(basicAuth('user', 'pass'));
+app.all('/schedules', basicAuth(function(user, password) {
+  return user === 'user' && password === 'pass';
+}));

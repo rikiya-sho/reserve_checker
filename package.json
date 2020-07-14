@@ -7,6 +7,7 @@
     "test": "npx jest --testTimeout=10000 --forceExit"
   },
   "dependencies": {
+    "basic-auth-connect": "^1.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -22,5 +23,9 @@
   "devDependencies": {
     "jest": "25.1.0",
     "supertest": "3.1.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:rikiya-sho/reserve_checker.git",
+  "author": "Rikiya Shogen <iphone.shogen@gmail.com>",
+  "license": "MIT"
 }

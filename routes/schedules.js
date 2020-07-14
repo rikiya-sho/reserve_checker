@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var common = require('./common');
 const Schedule = require('../models/schedule');
 
 /* GET users listing. */
@@ -7,7 +8,7 @@ router.get('/', (req, res, next) => {
   
   var dayOfWeekArray = [];
   for(let i=0; i<14; i++){
-    dayOfWeekArray.push(getAfterDate(i));
+    dayOfWeekArray.push(common.getAfterDate(i));
   }
   //console.log(dayOfWeekArray);//2週間の年月日が取得できているかテスト
 
@@ -48,7 +49,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   console.log(req.body); // TODO 予定と候補を保存する実装をする
-  res.redirect('/schedules/?y=' + req.body.yOffset + '&n=' + randomNum());
+  res.redirect('/schedules/?y=' + req.body.yOffset + '&n=' + common.randomNum());
 
   Schedule.upsert({
     date: req.body.date,
@@ -72,23 +73,6 @@ router.post('/', (req, res, next) => {
 
 });
 module.exports = router;
-
-//今日から1週間の年月日を取得---------------------
-function getAfterDate(afterDay) {
-  var date = new Date();
-  date.setDate(date.getDate() + afterDay);
-  var year  = date.getFullYear();
-  var month = ("0"+(date.getMonth() + 1)).slice(-2);
-  var day   = ("0"+date.getDate()).slice(-2);
-  var today = year + "-" + month + "-" + day;
-  return today; 
-}
-
-//ハッシュ用ランダム値---------------------
-function randomNum(){
-  var hashNum = Math.floor(Math.random() * 1000000);
-  return hashNum;
-}
 
 
 

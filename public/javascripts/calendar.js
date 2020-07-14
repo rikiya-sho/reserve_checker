@@ -1,11 +1,10 @@
-
+/*
+カレンダーの設定
+*/
 
 //年、月の取得---------------------
 const date = new Date();
-var year = date.getYear();
-if(year < 1900){
-  year += 1900;
-}
+var year = date.getFullYear();
 const mon = date.getMonth()+1;
 const day  = date.getDay();
 //表示文字列

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
+var basicAuth = require('basic-auth-connect');
 
 //モデルの読み込み
 var Schedule = require('./models/schedule');
@@ -31,10 +32,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//ベーシック認証
+app.use(basicAuth('user', 'pass'));
+app.all('/schedules', basicAuth(function(user, password) {
+  return user === 'user' && password === 'pass';
+}));
+
 app.use('/', indexRouter);
 app.use('/schedules', scheduleRouter);
 app.use('/init', initRouter);
 //app.use('/users', usersRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
