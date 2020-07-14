@@ -50,9 +50,11 @@ th,td{
 .emptyCell{
   background-color: #F6F6F6
 }
-#schedule-container .sunday{
+#schedule-container .sunday, #schedule-container .holiday{
   background-color: #EEE;
 }
+
+
 
 .day7 .saturday{
   background-color: #D9E3EC;
@@ -61,6 +63,11 @@ th,td{
 .day7 .sunday{
   background-color: #EEDDD9;
   color: #BB5555;
+}
+
+.edit_select{
+  font-size:10px;
+  color:#000;
 }
 
 

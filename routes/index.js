@@ -9,7 +9,13 @@ router.get('/', function(req, res, next) {
 });*/
 
 router.get('/', (req, res, next) => {
+  
+  var dayOfWeekArray = [];
+  for(let i=0; i<7; i++){
+    dayOfWeekArray.push(getAfterDate(i));
+  }
   //console.log(dayOfWeekArray);//1週間の年月日が取得できているかテスト
+  
   if (Schedule) {
     Schedule.findAll({
       where: {
@@ -49,7 +55,4 @@ function getAfterDate(afterDay) {
   var today = year + "-" + month + "-" + day;
   return today; 
 }
-var dayOfWeekArray = [];
-for(let i=0; i<7; i++){
-  dayOfWeekArray.push(getAfterDate(i));
-}
+

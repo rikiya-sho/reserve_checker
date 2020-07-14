@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1 #{title}（今日〜6日後まで）
+  h1= title 
   
-  table(class="wrapper")
+  table
     thead
       tr
         td(rowspan="2")
@@ -54,17 +54,15 @@ block content
               th 19:30
             tr
               th(class="lastCell") 20:00
-        - var schedule = schedules;
-        - for (var i = 0; i < 7; i++)
+        each schedule in schedules
           th
-            form(method="post", action="/schedules", name=schedule[i].date)
-              input(class="scroll" type="hidden" name="yOffset" value="0")
+            form(method="post", action="/schedules", name=schedule.date)
               table
                 tr
-                  th(class="scheduleDate") #{schedule[i].date} <input type="date" name="date" value=#{schedule[i].date}>
+                  th(class="scheduleDate") #{schedule.date} <input type="date" name="date" value=#{schedule.date}>
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_9_00}
+                    div(class="status") #{schedule.reserve_9_00}
                     div(class="edit_select")
                       button(name="reserve_9_00" value="1" type="submit")
                         span 予約する
@@ -73,7 +71,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_9_30}
+                    div(class="status") #{schedule.reserve_9_30}
                     div(class="edit_select")
                       button(name="reserve_9_30" value="1" type="submit")
                         span 予約する
@@ -82,7 +80,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_10_00}
+                    div(class="status") #{schedule.reserve_10_00}
                     div(class="edit_select")
                       button(name="reserve_10_00" value="1" type="submit")
                         span 予約する
@@ -91,7 +89,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_10_30}
+                    div(class="status") #{schedule.reserve_10_30}
                     div(class="edit_select")
                       button(name="reserve_10_30" value="1" type="submit")
                         span 予約する
@@ -100,7 +98,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_11_00}
+                    div(class="status") #{schedule.reserve_11_00}
                     div(class="edit_select")
                       button(name="reserve_11_00" value="1" type="submit")
                         span 予約する
@@ -109,7 +107,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_11_30}
+                    div(class="status") #{schedule.reserve_11_30}
                     div(class="edit_select")
                       button(name="reserve_11_30" value="1" type="submit")
                         span 予約する
@@ -118,7 +116,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_12_00}
+                    div(class="status") #{schedule.reserve_12_00}
                     div(class="edit_select")
                       button(name="reserve_12_00" value="1" type="submit")
                         span 予約する
@@ -130,7 +128,7 @@ block content
                     div(class="status") &nbsp;
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_16_00}
+                    div(class="status") #{schedule.reserve_16_00}
                     div(class="edit_select")
                       button(name="reserve_16_00" value="1" type="submit")
                         span 予約する
@@ -139,7 +137,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_16_30}
+                    div(class="status") #{schedule.reserve_16_30}
                     div(class="edit_select")
                       button(name="reserve_16_30" value="1" type="submit")
                         span 予約する
@@ -148,7 +146,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_17_00}
+                    div(class="status") #{schedule.reserve_17_00}
                     div(class="edit_select")
                       button(name="reserve_17_00" value="1" type="submit")
                         span 予約する
@@ -157,7 +155,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_17_30}
+                    div(class="status") #{schedule.reserve_17_30}
                     div(class="edit_select")
                       button(name="reserve_17_30" value="1" type="submit")
                         span 予約する
@@ -166,7 +164,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_18_00}
+                    div(class="status") #{schedule.reserve_18_00}
                     div(class="edit_select")
                       button(name="reserve_18_00" value="1" type="submit")
                         span 予約する
@@ -175,7 +173,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_18_30}
+                    div(class="status") #{schedule.reserve_18_30}
                     div(class="edit_select")
                       button(name="reserve_18_30" value="1" type="submit")
                         span 予約する
@@ -184,7 +182,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_19_00}
+                    div(class="status") #{schedule.reserve_19_00}
                     div(class="edit_select")
                       button(name="reserve_19_00" value="1" type="submit")
                         span 予約する
@@ -193,7 +191,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_19_30}
+                    div(class="status") #{schedule.reserve_19_30}
                     div(class="edit_select")
                       button(name="reserve_19_30" value="1" type="submit")
                         span 予約する
@@ -202,217 +200,7 @@ block content
                         span キャンセル
                 tr
                   td
-                    div(class="status") #{schedule[i].reserve_20_00}
-                    div(class="edit_select")
-                      button(name="reserve_20_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_20_00" value="0" type="submit")
-                        span キャンセル
-  
-
-  h1 #{title}（7日後〜13日後まで）
-  
-  table(class="wrapper")
-    thead
-      tr
-        td(rowspan="2")
-        td(id="month2" colspan="7")
-      tr(class="day7")
-        td(id="today+7")
-        td(id="today+8")
-        td(id="today+9")
-        td(id="today+10")
-        td(id="today+11")
-        td(id="today+12")
-        td(id="today+13")
-    tbody
-      tr(id="schedule-container2")
-        th
-          table(class="time")
-            tr
-              th 9:00
-            tr
-              th 9:30
-            tr
-              th 10:00
-            tr
-              th 10:30
-            tr
-              th 11:00
-            tr
-              th 11:30
-            tr
-              th 12:00
-            tr
-              th &nbsp;
-            tr
-              th 16:00
-            tr
-              th 16:30
-            tr
-              th 17:00
-            tr
-              th 17:30
-            tr
-              th 18:00
-            tr
-              th 18:30
-            tr
-              th 19:00
-            tr
-              th 19:30
-            tr
-              th(class="lastCell") 20:00
-        - var schedule = schedules;
-        - for (var i = 7; i < 14; i++)
-          th
-            form(method="post", action="/schedules", name=schedule[i].date)
-              input(class="scroll" type="hidden" name="yOffset" value="0")
-              table
-                tr
-                  th(class="scheduleDate") #{schedule[i].date} <input type="date" name="date" value=#{schedule[i].date}>
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_9_00}
-                    div(class="edit_select")
-                      button(name="reserve_9_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_9_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_9_30}
-                    div(class="edit_select")
-                      button(name="reserve_9_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_9_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_10_00}
-                    div(class="edit_select")
-                      button(name="reserve_10_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_10_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_10_30}
-                    div(class="edit_select")
-                      button(name="reserve_10_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_10_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_11_00}
-                    div(class="edit_select")
-                      button(name="reserve_11_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_11_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_11_30}
-                    div(class="edit_select")
-                      button(name="reserve_11_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_11_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_12_00}
-                    div(class="edit_select")
-                      button(name="reserve_12_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_12_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td(class="emptyCell")
-                    div(class="status") &nbsp;
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_16_00}
-                    div(class="edit_select")
-                      button(name="reserve_16_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_16_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_16_30}
-                    div(class="edit_select")
-                      button(name="reserve_16_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_16_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_17_00}
-                    div(class="edit_select")
-                      button(name="reserve_17_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_17_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_17_30}
-                    div(class="edit_select")
-                      button(name="reserve_17_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_17_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_18_00}
-                    div(class="edit_select")
-                      button(name="reserve_18_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_18_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_18_30}
-                    div(class="edit_select")
-                      button(name="reserve_18_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_18_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_19_00}
-                    div(class="edit_select")
-                      button(name="reserve_19_00" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_19_00" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_19_30}
-                    div(class="edit_select")
-                      button(name="reserve_19_30" value="1" type="submit")
-                        span 予約する
-                    div(class="edit_select")
-                      button(name="reserve_19_30" value="0" type="submit")
-                        span キャンセル
-                tr
-                  td
-                    div(class="status") #{schedule[i].reserve_20_00}
+                    div(class="status") #{schedule.reserve_20_00}
                     div(class="edit_select")
                       button(name="reserve_20_00" value="1" type="submit")
                         span 予約する
@@ -423,12 +211,12 @@ block content
 
 
   form(method="post", action="/schedules")
-    input(class="scroll" type="hidden" name="yOffset" value="0")
-    div(class="date_direct")
-      h1 日時を直接入力
+    div
+      h5 日時
       input(type="date" name="date")
     
-    table(class="reserve_direct")
+
+    table
       tr
         th 時間
         th 予約選択
@@ -469,7 +257,7 @@ block content
           div(class="edit_select") <input type="radio" name="reserve_12_00" value="0">キャンセル
       tr
         th &nbsp;
-        td(class="empty") &nbsp;
+        td &nbsp;
       tr
         th 16:00
         td
@@ -520,6 +308,4 @@ block content
 
   script(src='/javascripts/calendar.js')
   script(src='/javascripts/table_view.js')
-  script(src='/javascripts/edit.js')
-  script(src='/javascripts/holiday.js')
   link(rel='stylesheet', href='/stylesheets/schedule_edit.css')

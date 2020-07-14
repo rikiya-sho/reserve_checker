@@ -6,13 +6,14 @@ $(function(){
   for(let i=1; i<8; i++){
     for(let j=0; j<17; j++){
       var reserve = $('#schedule-container .reserveTable' + i + ' td').eq(j);
+      var reserve_status = $('#schedule-container .reserveTable' + i + ' td' + ' .status').eq(j);
       //予約可能
-      if(reserve.text() == 0){
-        reserve.text('◎');
+      if(reserve_status.text() == 0){
+        reserve_status.text('◎');
         reserve.addClass('reservable');
       //予約不可能
-      } else if(reserve.text() == 1){
-        reserve.text('×');
+      } else if(reserve_status.text() == 1){
+        reserve_status.text('×');
         reserve.addClass('unreservable');
       } 
     }

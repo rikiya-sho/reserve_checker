@@ -20,9 +20,10 @@ var saturdayPos; //土曜日の場所
 var wednesdayPos; //水曜日の場所
 var timeCellPos = 1; //時間帯のセルの分ずらす
 /*各数字は曜日配列番号に対応*/
-console.log(Number(day));
-sundayPos = Number(day) + timeCellPos;
-
+sundayPos = 7 - Number(day) + timeCellPos;
+if(sundayPos == 8){
+  sundayPos = 0 + timeCellPos;
+}
 saturdayPos = 6 - Number(day) + timeCellPos;
 wednesdayPos = 3 - Number(day) + timeCellPos;
 if(wednesdayPos < 0){
@@ -61,7 +62,7 @@ for(let i=0; i<7; i++){
   weekArray.push(document.getElementById('today+' + i));
   weekArray[i].innerHTML =getAfterDate(i);
 }
-
+//土日にクラス追加
 $(function(){
   $('.day7 td').eq(saturdayPos - timeCellPos).addClass('saturday');
   $('.day7 td').eq(sundayPos - timeCellPos).addClass('sunday')

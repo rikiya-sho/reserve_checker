@@ -1,0 +1,52 @@
+.wrapper{
+  margin-bottom:6em;
+}
+
+.edit_select button{
+  font-size:10px;
+  color:#000;
+  width:7em;
+  margin-bottom:0.5em;
+}
+
+th,td{
+  width:7em;
+}
+
+#schedule-container table th, #schedule-container table td{
+  height:80px;
+}
+
+
+#schedule-container2 table{
+  display: inline-block;
+}
+#schedule-container2 table th, #schedule-container2 table td{
+  border:none;
+  text-align: center;
+  height:35px;
+  border-bottom:1px solid #ccc;
+}
+#schedule-container2 table .lastCell{
+  border-bottom:0;
+}
+#schedule-container2 table th, #schedule-container2 table td{
+  height:80px;
+}
+#schedule-container2 .sunday, #schedule-container2 .holiday{
+  background-color: #EEE;
+}
+
+.date_direct{
+  margin-bottom:2em;
+}
+
+.reserve_direct{
+  margin-bottom:1em;
+}
+.reserve_direct th{
+  background-color: #F6F6F6;
+}
+.reserve_direct .empty{
+  background-color: #F6F6F6;
+}
