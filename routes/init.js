@@ -11,9 +11,10 @@ router.get('/', function(req, res, next) {
 });
 
 //データベース初期設定------------------------------
+//2020.7.15より12000日分DB作成
 function dbInit(){
   var day 
-  for(let i=0; i<1000; i++){
+  for(let i=0; i<12000; i++){
     day = common.getAfterDate(i);
     console.log(day)
 
