@@ -33,9 +33,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //ベーシック認証
-app.use(basicAuth('user', 'pass'));
-app.all('/schedules', basicAuth(function(user, password) {
-  return user === 'user' && password === 'pass';
+//全体に適用
+/*app.use(basicAuth('user', 'pass'));*/
+//schedules以下に適用
+app.all('/schedules/*', basicAuth(function(user, password) {
+  return user === 'master' && password === 'edit';
 }));
 
 app.use('/', indexRouter);

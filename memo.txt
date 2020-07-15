@@ -19,3 +19,25 @@ app.all('/schedules', basicAuth(function(user, password) {
 }));
 
 ■Heroku
+https://enthousiaste-croissant-06290.herokuapp.com/ | https://git.heroku.com/enthousiaste-croissant-06290.git
+Created postgresql-globular-86187 as DATABASE_URL
+
+登録がうまくいかない時
+
+アプリケーションを確認
+heroku apps
+
+（5つを超える場合）アプリケーションを削除
+heroku destroy --app hmbrsnmhrgk（アプリ名）
+
+Yarnとnpmロックファイルの競合が原因でHerokuビルドが失敗する場合は紐付けを解除
+git rm yarn.lock
+git rm package-lock.json
+
+解除した後にローカルの変更をcommit してからpush
+
+Procfileを変更
+web: node bin/www
+
+ローカルで動作チェック
+heroku local
