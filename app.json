@@ -1,0 +1,8 @@
+{
+  "name": "Reserve checker",
+  "description": "Check reservation.",
+  "repository": "https://github.com/rikiya-sho/reserve_checker",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
