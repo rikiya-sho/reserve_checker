@@ -25,7 +25,7 @@ if(sundayPos == 8){
 }
 saturdayPos = 6 - Number(day) + timeCellPos;
 wednesdayPos = 3 - Number(day) + timeCellPos;
-if(wednesdayPos < 0){
+if(wednesdayPos <= 0){
   wednesdayPos = 6 + wednesdayPos + timeCellPos;
 }
 const scheduleContainer = document.getElementById('schedule-container');

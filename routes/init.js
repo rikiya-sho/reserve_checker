@@ -5,13 +5,13 @@ const Schedule = require('../models/schedule');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  //res.redirect('/schedules/');//公開後はこちらを有効
-  res.render('init', { schedule: req.body });//公開時に1回だけ実行
-  dbInit();//公開時に1回だけ実行
+  res.redirect('/schedules/');//公開後はこちらを有効
+  //res.render('init', { schedule: req.body });//公開時に1回だけ実行
+  //dbInit();//公開時に1回だけ実行
 });
 
 //データベース初期設定------------------------------
-//2020.7.15より9900日分DB作成
+//2020.7.16より9900日分DB作成
 function dbInit(){
   var day 
   for(let i=0; i<9900; i++){

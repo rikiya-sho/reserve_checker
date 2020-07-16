@@ -50,3 +50,5 @@ heroku pg:psql -c "\d"
 
 //テーブルの内容
 heroku pg:psql -c "select * from テーブル名;"
+
+//herokuのログ出力
