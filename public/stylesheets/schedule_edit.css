@@ -1,5 +1,13 @@
+/*schedules用
+style.cssをoverride*/
+
 .wrapper{
   margin-bottom:6em;
+}
+@media screen and (max-width: 640px) {
+  .wrapper{
+    margin-bottom:4em;
+  }
 }
 
 .edit_select button{
@@ -8,13 +16,29 @@
   width:7em;
   margin-bottom:0.5em;
 }
+@media screen and (max-width: 640px) {
+  .edit_select button{
+    font-size:9px;
+    width:4em;
+  }
+}
 
 th,td{
   width:7em;
 }
+@media screen and (max-width: 640px) {
+  th,td{
+    width:4em;
+  }
+}
 
 #schedule-container table th, #schedule-container table td{
   height:80px;
+}
+@media screen and (max-width: 640px) {
+  #schedule-container table th, #schedule-container table td{
+    height:140px;
+  }
 }
 
 
@@ -33,6 +57,11 @@ th,td{
 #schedule-container2 table th, #schedule-container2 table td{
   height:80px;
 }
+@media screen and (max-width: 640px) {
+  #schedule-container2 table th, #schedule-container2 table td{
+    height:140px;
+  }
+}
 #schedule-container2 .sunday, #schedule-container2 .holiday{
   background-color: #EEE;
 }
@@ -46,6 +75,9 @@ th,td{
 }
 .reserve_direct th{
   background-color: #F6F6F6;
+}
+.reserve_direct td{
+  width:8em;
 }
 .reserve_direct .empty{
   background-color: #F6F6F6;

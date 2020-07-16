@@ -1,6 +1,6 @@
 メモ
 
-■データベース名
+■データベース名（ローカル）
 reserve_checker
 
 ■Express4 BASIC認証
@@ -20,7 +20,9 @@ app.all('/schedules', basicAuth(function(user, password) {
 
 ■Heroku
 https://enthousiaste-croissant-06290.herokuapp.com/ | https://git.heroku.com/enthousiaste-croissant-06290.git
-Created postgresql-globular-86187 as DATABASE_URL
+
+アプリ名
+enthousiaste-croissant-06290
 
 登録がうまくいかない時
 
@@ -41,3 +43,10 @@ web: node bin/www
 
 ローカルで動作チェック
 heroku local
+
+本番環境データベースチェック
+//テーブル名
+heroku pg:psql -c "\d"
+
+//テーブルの内容
+heroku pg:psql -c "select * from テーブル名;"
