@@ -48,7 +48,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.body); // TODO 予定と候補を保存する実装をする
+  //console.log(req.body); 
   res.redirect('/schedules/?y=' + req.body.yOffset + '&n=' + common.randomNum());
 
   Schedule.upsert({
