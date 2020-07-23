@@ -45,6 +45,8 @@ web: node bin/www
 heroku local
 
 本番環境データベースチェック
+//データベース概要
+heroku pg:info
 //テーブル名
 heroku pg:psql -c "\d"
 
@@ -52,3 +54,4 @@ heroku pg:psql -c "\d"
 heroku pg:psql -c "select * from テーブル名;"
 
 //herokuのログ出力
+heroku logs --tail
