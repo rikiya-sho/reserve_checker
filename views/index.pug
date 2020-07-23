@@ -54,62 +54,64 @@ block content
               th 19:30
             tr
               th(class="lastCell") 20:00
-        each schedule in schedules
+        - var schedule = schedules;
+        - for (var i = 0; i < 7; i++)
           th
-            table
-              tr
-                th(class="scheduleDate") #{schedule.date}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_9_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_9_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_10_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_10_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_11_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_11_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_12_00}
-              tr
-                td(class="emptyCell")
-                  div(class="status") &nbsp;
-              tr
-                td
-                  div(class="status") #{schedule.reserve_16_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_16_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_17_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_17_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_18_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_18_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_19_00}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_19_30}
-              tr
-                td
-                  div(class="status") #{schedule.reserve_20_00}
+            div(class=schedule[i].date)
+              table
+                tr
+                  th(class="scheduleDate") #{schedule[i].date}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_9_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_9_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_10_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_10_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_11_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_11_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_12_00}
+                tr
+                  td(class="emptyCell")
+                    div(class="status") &nbsp;
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_16_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_16_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_17_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_17_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_18_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_18_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_19_00}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_19_30}
+                tr
+                  td
+                    div(class="status") #{schedule[i].reserve_20_00}
   script(src='/javascripts/calendar.js')
   script(src='/javascripts/table_view.js')
   script(src='/javascripts/holiday.js')

@@ -9,13 +9,23 @@ $(function(){
     '2020-11-03', '2020-11-23'
   ];
 
-  //formタグの日付と祝日配列を評価し祝日ならクラスを追加
+  //formタグの日付と祝日配列を評価し祝日ならクラスを追加（/schedule 用）
   var formArray = document.getElementsByTagName('form');
   for(let i=0; i<formArray.length; i++){
     var formName = formArray[i].name;
     for(let j=0; j<holidayArray.length; j++){
       if(formName == holidayArray[j]){
         formArray[i].parentNode.classList.add('holiday');
+      }
+    }
+  }
+  //divタグの日付と祝日配列を評価し祝日ならクラスを追加（/ 用）
+  var divArray = document.getElementsByTagName('div');
+  for(let i=0; i<divArray.length; i++){
+    var className = divArray[i].className;
+    for(let j=0; j<holidayArray.length; j++){
+      if(className == holidayArray[j]){
+        divArray[i].parentNode.classList.add('holiday');
       }
     }
   }
