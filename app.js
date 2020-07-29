@@ -22,14 +22,6 @@ var initRouter = require('./routes/init');
 var app = express();
 app.use(helmet());
 
-//ベーシック認証
-//全体に適用
-//app.use(basicAuth('master', 'edit'));
-//schedules以下に適用//
-app.all('/schedules/*', basicAuth(function(user, password) {
-  return user === 'master' && password === 'edit';
-}));
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -40,7 +32,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+//ベーシック認証
+//全体に適用
+//app.use(basicAuth('master', 'edit'));
+//schedules以下に適用//
+app.use('/schedules/*', basicAuth(function(user, password) {
+  return user === 'master' && password === 'edit';
+}));
 
 app.use('/', indexRouter);
 app.use('/schedules', scheduleRouter);
