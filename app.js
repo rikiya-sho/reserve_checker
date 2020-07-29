@@ -34,12 +34,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //ベーシック認証
 //全体に適用
-app.use(basicAuth('master', 'edit'));
+//app.use(basicAuth('master', 'edit'));
 //schedules以下に適用//
-/*
-app.all('/schedules/*', basicAuth(function(user, password) {
+app.all('/schedules', basicAuth(function(user, password) {
   return user === 'master' && password === 'edit';
-}));*/
+}));
 
 app.use('/', indexRouter);
 app.use('/schedules', scheduleRouter);
