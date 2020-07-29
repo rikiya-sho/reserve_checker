@@ -40,10 +40,14 @@ app.use('/init', initRouter);
 //ベーシック認証
 //全体に適用
 //app.use(basicAuth('master', 'edit'));
-//schedules以下に適用//
-app.use('/schedules/*', basicAuth(function(user, password) {
-  return user === 'master' && password === 'edit';
+app.use(basicAuth(function(user, password) {
+  return user === 'username' && password === 'password';
 }));
+//schedules以下に適用//
+/*
+app.all('/schedules/*', basicAuth(function(user, password) {
+  return user === 'master' && password === 'edit';
+}));*/
 
 
 
