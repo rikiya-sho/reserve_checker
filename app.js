@@ -6,6 +6,14 @@ var logger = require('morgan');
 var helmet = require('helmet');
 var basicAuth = require('basic-auth-connect');
 
+//ベーシック認証
+//全体に適用
+//app.use(basicAuth('master', 'edit'));
+//schedules以下に適用//
+app.all('/schedules/*', basicAuth(function(user, password) {
+  return user === 'master' && password === 'edit';
+}));
+
 //モデルの読み込み
 var Schedule = require('./models/schedule');
 
@@ -26,19 +34,13 @@ app.use(helmet());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-//ベーシック認証
-//全体に適用
-//app.use(basicAuth('master', 'edit'));
-//schedules以下に適用//
-app.all('/schedules/*', basicAuth(function(user, password) {
-  return user === 'master' && password === 'edit';
-}));
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/', indexRouter);
 app.use('/schedules', scheduleRouter);
