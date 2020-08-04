@@ -62,9 +62,11 @@ th,td{
 .emptyCell{
   background-color: #F6F6F6
 }
+/*
 #schedule-container .sunday, #schedule-container .holiday{
   background-color: #EEE;
 }
+*/
 
 
 

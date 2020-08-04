@@ -39,9 +39,11 @@ $(function(){
   const saturdayCell = scheduleContainer.children[saturdayPos];
   const wednesdayCell = scheduleContainer.children[wednesdayPos];
 
+  
   sundayCell.classList.add('sunday');
   saturdayCell.classList.add('saturday');
   wednesdayCell.classList.add('wednesday');
+  
 
 
   //7日間の曜日取得---------------------
@@ -67,7 +69,9 @@ $(function(){
   }
 
   //日曜日を休業日に設定（7日後）-----------------------------
+  /*
   $('#schedule-container2 .sunday table').replaceWith('休<br>業<br>日');
+  */
 
   //予約状況を◎と×で表示（7日後）-----------------------------
   for(let i=1; i<8; i++){
@@ -91,6 +95,7 @@ $(function(){
   $('#schedule-container2 .emptyCell').text('　');
 
   //土曜日と水曜日の午後に休業設定（7日後）-----------------------------
+  /*
   for(let i=8; i<17; i++){
     var saturdayPM = $('#schedule-container2 .saturday td').eq(i);
     saturdayPM.addClass('close');
@@ -98,9 +103,10 @@ $(function(){
     wednesdayPM.addClass('close');
   }
   $('#schedule-container2 .close').text('－');
-  
+  */
   $('.day7 td').eq(saturdayPos - timeCellPos + 7).addClass('saturday');
   $('.day7 td').eq(sundayPos - timeCellPos + 7).addClass('sunday')
+  
 });
 
 

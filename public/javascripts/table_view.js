@@ -4,7 +4,9 @@
 
 $(function(){
   //日曜日を休業日に設定-----------------------------
+  /*
   $('#schedule-container .sunday table').replaceWith('休<br>業<br>日');
+  */
 
   //予約状況を◎と×で表示-----------------------------
   for(let i=1; i<8; i++){
@@ -28,6 +30,7 @@ $(function(){
   $('#schedule-container .emptyCell').text('　');
 
   //土曜日と水曜日の午後に休業設定-----------------------------
+  /*
   for(let i=8; i<17; i++){
     var saturdayPM = $('#schedule-container .saturday td').eq(i);
     saturdayPM.addClass('close');
@@ -35,5 +38,5 @@ $(function(){
     wednesdayPM.addClass('close');
   }
   $('#schedule-container .close').text('－');
-
+  */
 });

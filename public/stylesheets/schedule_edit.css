@@ -62,9 +62,11 @@ th,td{
     height:140px;
   }
 }
+/*
 #schedule-container2 .sunday, #schedule-container2 .holiday{
   background-color: #EEE;
 }
+*/
 
 .date_direct{
   margin-bottom:2em;
